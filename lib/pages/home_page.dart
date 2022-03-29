@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theory_test/widgets/custom_bottom_navigation_bar.dart';
 import 'package:theory_test/widgets/progress_bar.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,10 +8,14 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        bottomNavigationBar: CustomBottomNavigationBar(),
         appBar: AppBar(
           // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-          leading: Icon(Icons.account_box),
-          actions: [Icon(Icons.share)],
+          leading: const Icon(Icons.dashboard_outlined),
+          actions: const [
+            Icon(Icons.share_outlined),
+            SizedBox(width: 10),
+          ],
           centerTitle: true,
           title: Text("Theory test"),
         ),
@@ -53,6 +58,7 @@ class HomePage extends StatelessWidget {
                   ),
                 ),
               ),
+              Expanded(child: SizedBox()),
             ],
           ),
         ));
