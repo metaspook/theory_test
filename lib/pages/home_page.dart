@@ -1,6 +1,9 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:theory_test/widgets/custom_bottom_navigation_bar.dart';
 import 'package:theory_test/widgets/progress_bar.dart';
+import 'package:theory_test/widgets/start_journey_card.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -10,56 +13,83 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         bottomNavigationBar: CustomBottomNavigationBar(),
         appBar: AppBar(
-          // backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          iconTheme: IconThemeData(color: Colors.blue),
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          elevation: 0,
           leading: const Icon(Icons.dashboard_outlined),
           actions: const [
             Icon(Icons.share_outlined),
             SizedBox(width: 10),
           ],
           centerTitle: true,
-          title: Text("Theory test"),
+          title: Text(
+            "Theory test",
+            style: TextStyle(color: Colors.blue),
+          ),
         ),
         body: Center(
-          child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              SizedBox(height: 10),
-              Card(
-                margin: EdgeInsets.all(8),
-                elevation: 5,
-                // color: Colors.amber,
-                child: Padding(
-                  padding: const EdgeInsets.all(12),
-                  child: Column(
-                    children: [
-                      Text("Your Progress"),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [Text("Study"), Text("15%")],
-                      ),
-                      SizedBox(height: 10),
-                      ProgressBar(progressPercent: 15),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [Text("Pactice"), Text("20%")],
-                      ),
-                      SizedBox(height: 10),
-                      ProgressBar(progressPercent: 20),
-                      SizedBox(height: 10),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [Text("Mock test"), Text("12%")],
-                      ),
-                      SizedBox(height: 10),
-                      ProgressBar(progressPercent: 12),
-                      SizedBox(height: 10),
-                    ],
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              // mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                SizedBox(height: 10),
+                Card(
+                  elevation: 5,
+                  // color: Colors.amber,
+                  child: Padding(
+                    padding: const EdgeInsets.all(12),
+                    child: Column(
+                      children: [
+                        Text(
+                          "Your Progress",
+                          style:
+                              Theme.of(context).textTheme.headline6!.copyWith(
+                                    color: Colors.blue,
+                                  ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [Text("Study"), Text("15%")],
+                        ),
+                        SizedBox(height: 10),
+                        ProgressBar(progressPercent: 15),
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [Text("Pactice"), Text("20%")],
+                        ),
+                        SizedBox(height: 10),
+                        ProgressBar(progressPercent: 20),
+                        SizedBox(height: 10),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [Text("Mock test"), Text("12%")],
+                        ),
+                        SizedBox(height: 10),
+                        ProgressBar(progressPercent: 12),
+                        SizedBox(height: 10),
+                      ],
+                    ),
                   ),
                 ),
-              ),
-              Expanded(child: SizedBox()),
-            ],
+                SizedBox(height: 10),
+                Text(
+                  "Start Your Journey",
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.headline6!.copyWith(
+                      color: Colors.blue, fontWeight: FontWeight.bold),
+                ),
+                SizedBox(height: 10),
+                StartJourneyCard(title: 'Study'),
+                SizedBox(height: 10),
+                StartJourneyCard(title: 'Practice'),
+                SizedBox(height: 10),
+                StartJourneyCard(title: 'Mock Test'),
+                Expanded(child: SizedBox()),
+              ],
+            ),
           ),
         ));
   }
