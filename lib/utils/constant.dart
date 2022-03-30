@@ -1,10 +1,17 @@
 import 'package:theory_test/pages/about_theory.dart';
+import 'package:theory_test/pages/dvsa_products.dart';
+import 'package:theory_test/pages/highway_code.dart';
+import 'package:theory_test/pages/share_this_app.dart';
+import 'package:theory_test/pages/tell_us.dart';
+import 'package:theory_test/pages/test_center.dart';
+import 'package:theory_test/pages/use_this_app.dart';
+import 'package:theory_test/pages/useful_links.dart';
 
 class Constant {
   static const cardButtonElements = <Map<String, dynamic>>[
     {
       "title": "Find a driving test centre",
-      "page": AboutTheory(),
+      "page": TestCenter(),
     },
     {
       "title": "More about the theory test",
@@ -12,27 +19,27 @@ class Constant {
     },
     {
       "title": "The Official Highway Code",
-      "page": AboutTheory(),
+      "page": HighwayCode(),
     },
     {
       "title": "Useful links",
-      "page": AboutTheory(),
+      "page": UsefulLinks(),
     },
     {
       "title": "More DVSA products",
-      "page": AboutTheory(),
+      "page": DvsaProducts(),
     },
     {
       "title": "How to use this app",
-      "page": AboutTheory(),
+      "page": UseThisApp(),
     },
     {
       "title": "Share this app",
-      "page": AboutTheory(),
+      "page": ShareThisApp(),
     },
     {
       "title": "Tell us what you think",
-      "page": AboutTheory(),
+      "page": TellUs(),
     },
   ];
 
