@@ -13,7 +13,10 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
         bottomNavigationBar: CustomBottomNavigationBar(),
-        appBar: const CustomAppBar(title: 'Theory test'),
+        appBar: const CustomAppBar(
+          title: 'Theory test',
+          iconData: Icons.dashboard_outlined,
+        ),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),
