@@ -6,8 +6,9 @@ class StartJourneyCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
     return Card(
-      color: Theme.of(context).colorScheme.primary,
+      color: colorScheme.primary,
       elevation: 5,
       child: Padding(
         padding: const EdgeInsets.all(12),
@@ -17,22 +18,22 @@ class StartJourneyCard extends StatelessWidget {
             Text(title,
                 textAlign: TextAlign.center,
                 style: Theme.of(context).textTheme.headline5!.copyWith(
-                    color: Theme.of(context).scaffoldBackgroundColor,
-                    fontWeight: FontWeight.bold)),
+                    color: colorScheme.secondary, fontWeight: FontWeight.bold)),
             ElevatedButton(
                 onPressed: null,
                 child: Text("Start now",
                     style: Theme.of(context).textTheme.headline6!.copyWith(
-                        color: Colors.blue, fontWeight: FontWeight.bold)),
+                        color: colorScheme.primary,
+                        fontWeight: FontWeight.bold)),
                 style: ButtonStyle(
                   textStyle: MaterialStateProperty.all(Theme.of(context)
                       .textTheme
                       .headline6!
                       .copyWith(
-                          color: Theme.of(context).scaffoldBackgroundColor,
+                          color: colorScheme.secondary,
                           fontWeight: FontWeight.bold)),
-                  backgroundColor: MaterialStateProperty.all(
-                      Theme.of(context).scaffoldBackgroundColor),
+                  backgroundColor:
+                      MaterialStateProperty.all(colorScheme.secondary),
                 ))
           ],
         ),

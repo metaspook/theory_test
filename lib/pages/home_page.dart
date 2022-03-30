@@ -10,11 +10,13 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Scaffold(
         bottomNavigationBar: CustomBottomNavigationBar(),
         appBar: AppBar(
-          iconTheme: IconThemeData(color: Colors.blue),
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          iconTheme: IconThemeData(color: colorScheme.primary),
+          backgroundColor: colorScheme.secondary,
           elevation: 0,
           leading: const Icon(Icons.dashboard_outlined),
           actions: const [
@@ -24,7 +26,7 @@ class HomePage extends StatelessWidget {
           centerTitle: true,
           title: Text(
             "Theory test",
-            style: TextStyle(color: Colors.blue),
+            style: TextStyle(color: colorScheme.primary),
           ),
         ),
         body: Center(
