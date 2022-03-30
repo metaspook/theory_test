@@ -1,6 +1,5 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
+import 'package:theory_test/widgets/custom_appbar.dart';
 import 'package:theory_test/widgets/custom_bottom_navigation_bar.dart';
 import 'package:theory_test/widgets/progress_bar.dart';
 import 'package:theory_test/widgets/start_journey_card.dart';
@@ -14,21 +13,7 @@ class HomePage extends StatelessWidget {
 
     return Scaffold(
         bottomNavigationBar: CustomBottomNavigationBar(),
-        appBar: AppBar(
-          iconTheme: IconThemeData(color: colorScheme.primary),
-          backgroundColor: colorScheme.secondary,
-          elevation: 0,
-          leading: const Icon(Icons.dashboard_outlined),
-          actions: const [
-            Icon(Icons.share_outlined),
-            SizedBox(width: 10),
-          ],
-          centerTitle: true,
-          title: Text(
-            "Theory test",
-            style: TextStyle(color: colorScheme.primary),
-          ),
-        ),
+        appBar: const CustomAppBar(title: 'Theory test'),
         body: Center(
           child: Padding(
             padding: const EdgeInsets.all(8.0),

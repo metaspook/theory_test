@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:theory_test/pages/extra_page.dart';
 import 'package:theory_test/pages/home_page.dart';
 
 void main() {
@@ -20,7 +21,8 @@ class MyApp extends StatelessWidget {
         primary: Colors.blue,
         secondary: Theme.of(context).scaffoldBackgroundColor,
       )),
-      home: const HomePage(),
+      home: const ExtraPage(),
+      // home: const HomePage(),
     );
   }
 }
