@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:theory_test/widgets/custom_appbar.dart';
+import 'package:theory_test/widgets/progress_bar.dart'
+    show CircularProgressBar, LinearProgressBar;
 
 class StudyPage extends StatelessWidget {
   const StudyPage({Key? key}) : super(key: key);
@@ -10,7 +11,7 @@ class StudyPage extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-      appBar: CustomAppBar(
+      appBar: const CustomAppBar(
         title: 'Study Page',
         iconData: Icons.dashboard_outlined,
       ),
@@ -25,23 +26,13 @@ class StudyPage extends StatelessWidget {
                   .headline6!
                   .copyWith(color: Colors.blue, fontWeight: FontWeight.normal),
             ),
-            CircularPercentIndicator(
-              arcType: ArcType.FULL,
-              arcBackgroundColor: colorScheme.secondary,
-              radius: 120.0,
-              lineWidth: 13.0,
-              animation: true,
+            const SizedBox(height: 20),
+            const CircularProgressBar(),
+            const SizedBox(height: 50),
+            LinearProgressBar(
+              color: colorScheme.primary,
               percent: 0.7,
-              center: Text(
-                "70.0%",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
-              ),
-              footer: Text(
-                "Sales this week",
-                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 17.0),
-              ),
-              circularStrokeCap: CircularStrokeCap.round,
-              progressColor: Colors.purple,
+              height: 12.5,
             ),
           ],
         ),
