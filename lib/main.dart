@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:theory_test/pages/about_theory.dart';
-import 'package:theory_test/pages/extra_page.dart';
-import 'package:theory_test/pages/home_page.dart';
 import 'package:theory_test/pages/study_page.dart';
 
 void main() {

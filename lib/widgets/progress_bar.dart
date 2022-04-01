@@ -4,10 +4,10 @@ import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class CircularProgressBar extends StatelessWidget {
   const CircularProgressBar(
-      {Key? key, this.percent = 0.0, this.width = 5.0, this.color})
+      {Key? key, this.percent = 0.0, this.width = 5.0, this.colors})
       : super(key: key);
   final double percent, width;
-  final Color? color;
+  final List<Color>? colors;
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class CircularProgressBar extends StatelessWidget {
       alignment: Alignment.center,
       children: [
         Container(
-          alignment: Alignment.center,
+          // alignment: Alignment.center,
           width: width * 19.05,
           height: width * 19.05,
           decoration: BoxDecoration(
@@ -51,17 +51,27 @@ class CircularProgressBar extends StatelessWidget {
           ),
         ),
         CircularPercentIndicator(
+          linearGradient: colors != null && colors!.length > 1
+              ? LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: colors!)
+              : null,
           backgroundColor: Colors.transparent,
           radius: width * 9.05,
           lineWidth: width,
           animation: true,
           percent: percent,
-          center: const Text(
-            "70.0%",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+          center: Text(
+            "${(percent * 100).floor()}%",
+            style: Theme.of(context).textTheme.headline5!.copyWith(
+                fontSize: width * 3,
+                fontWeight: FontWeight.bold,
+                color: Colors.grey.shade700),
           ),
           circularStrokeCap: CircularStrokeCap.round,
-          progressColor: color,
+          progressColor:
+              colors != null && colors!.length == 1 ? colors![0] : null,
         ),
       ],
     );
@@ -70,11 +80,11 @@ class CircularProgressBar extends StatelessWidget {
 
 class LinearProgressBar extends StatelessWidget {
   const LinearProgressBar(
-      {Key? key, this.percent = 0.0, this.height = 5.0, this.color})
+      {Key? key, this.percent = 0.0, this.height = 5.0, this.colors})
       : super(key: key);
 
   final double percent, height;
-  final Color? color;
+  final List<Color>? colors;
 
   @override
   Widget build(BuildContext context) {
@@ -92,13 +102,19 @@ class LinearProgressBar extends StatelessWidget {
               ),
               const BoxShadow(
                 color: Colors.white,
-                spreadRadius: -1.25,
-                blurRadius: 2.5,
+                spreadRadius: -2.50,
+                blurRadius: 1.25,
               ),
             ],
           ),
         ),
         LinearPercentIndicator(
+          linearGradient: colors != null && colors!.length > 1
+              ? LinearGradient(
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
+                  colors: colors!)
+              : null,
           padding: EdgeInsets.symmetric(horizontal: (height * 1.6) / 5),
           backgroundColor: Colors.transparent,
           lineHeight: height,
@@ -106,7 +122,8 @@ class LinearProgressBar extends StatelessWidget {
           percent: percent,
           // Radius.circular(10) defines fully rounded.
           barRadius: const Radius.circular(10),
-          progressColor: color,
+          progressColor:
+              colors != null && colors!.length == 1 ? colors![0] : null,
         ),
       ],
     );
