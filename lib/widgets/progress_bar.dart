@@ -3,19 +3,21 @@ import 'package:percent_indicator/circular_percent_indicator.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 class CircularProgressBar extends StatelessWidget {
-  const CircularProgressBar({Key? key}) : super(key: key);
+  const CircularProgressBar(
+      {Key? key, this.percent = 0.0, this.width = 5.0, this.color})
+      : super(key: key);
+  final double percent, width;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-
     return Stack(
       alignment: Alignment.center,
       children: [
         Container(
           alignment: Alignment.center,
-          width: 200,
-          height: 200,
+          width: width * 19.05,
+          height: width * 19.05,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             boxShadow: [
@@ -31,8 +33,8 @@ class CircularProgressBar extends StatelessWidget {
           ),
         ),
         Container(
-          width: 160,
-          height: 160,
+          width: width * 15.2,
+          height: width * 15.2,
           decoration: BoxDecoration(
             shape: BoxShape.circle,
             boxShadow: [
@@ -50,16 +52,16 @@ class CircularProgressBar extends StatelessWidget {
         ),
         CircularPercentIndicator(
           backgroundColor: Colors.transparent,
-          radius: 95.0,
-          lineWidth: 10.5,
+          radius: width * 9.05,
+          lineWidth: width,
           animation: true,
-          percent: 0.75,
+          percent: percent,
           center: const Text(
             "70.0%",
             style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
           ),
           circularStrokeCap: CircularStrokeCap.round,
-          progressColor: colorScheme.primary,
+          progressColor: color,
         ),
       ],
     );

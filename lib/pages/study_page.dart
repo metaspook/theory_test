@@ -27,12 +27,16 @@ class StudyPage extends StatelessWidget {
                   .copyWith(color: Colors.blue, fontWeight: FontWeight.normal),
             ),
             const SizedBox(height: 20),
-            const CircularProgressBar(),
+            CircularProgressBar(
+              color: colorScheme.primary,
+              percent: 0.7,
+              width: 15,
+            ),
             const SizedBox(height: 50),
             LinearProgressBar(
               color: colorScheme.primary,
               percent: 0.7,
-              height: 12.5,
+              height: 15,
             ),
           ],
         ),
