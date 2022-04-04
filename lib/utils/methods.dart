@@ -7,6 +7,6 @@ class Methods {
   }
 
   static void goHome(BuildContext context) {
-    Navigator.pushNamed(context, '/home_page');
+    Navigator.popUntil(context, (route) => route.isFirst);
   }
 }

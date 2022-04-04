@@ -1,5 +1,35 @@
+import 'package:flutter/material.dart';
+
 class Constants {
   Constants._();
+  static const bottomNavBarElements = <Map<String, dynamic>>[
+    {
+      "icon": Icons.menu_book_outlined,
+      "label": "Study",
+      "routeName": '/study',
+    },
+    {
+      "icon": Icons.check_circle_outline_rounded,
+      "label": "Practice",
+      "routeName": '/practice',
+    },
+    {
+      "icon": Icons.alarm_on_rounded,
+      "label": "Mock Test",
+      "routeName": '/mock_test',
+    },
+    {
+      "icon": Icons.more_outlined,
+      "label": "Extra",
+      "routeName": '/extra',
+    },
+    {
+      "icon": Icons.settings_outlined,
+      "label": "Setting",
+      "routeName": '/settings',
+    },
+  ];
+
   static const extraInnerPageElements = <Map<String, String>>[
     {
       "appBarTitle": "Test Center",

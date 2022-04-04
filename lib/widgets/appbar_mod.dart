@@ -2,11 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:theory_test/utils/methods.dart';
 
 class AppBarMod extends StatelessWidget implements PreferredSizeWidget {
-  const AppBarMod({Key? key, required this.title, this.iconData})
+  const AppBarMod(
+      {Key? key,
+      required this.title,
+      this.iconData,
+      this.enableLeadingOnPressed = true})
       : super(key: key);
   // const CustomAppBar.secondary({Key? key, required this.title}) : super(key: key);
   final String title;
   final IconData? iconData;
+  final bool enableLeadingOnPressed;
 
   @override
   Size get preferredSize => const Size.fromHeight(kToolbarHeight);
@@ -19,18 +24,21 @@ class AppBarMod extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: colorScheme.secondary,
       elevation: 0,
       // automaticallyImplyLeading: true,
-
       leading: iconData == null
           ? IconButton(
               icon: const Icon(Icons.arrow_back_ios_rounded),
-              onPressed: () => Methods.goBack(context),
+              onPressed: enableLeadingOnPressed
+                  ? () => Methods.goBack(context)
+                  : () {},
             )
           : IconButton(
               icon: Icon(
                 iconData,
                 color: colorScheme.primary,
               ),
-              onPressed: () => Methods.goHome(context),
+              onPressed: enableLeadingOnPressed
+                  ? () => Methods.goHome(context)
+                  : () {},
             ),
       actions: const [
         Icon(Icons.share_outlined),

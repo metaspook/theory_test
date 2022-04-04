@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:theory_test/pages/extra_inner_page.dart';
 import 'package:theory_test/utils/constants.dart';
 import 'package:theory_test/widgets/appbar_mod.dart';
-import 'package:theory_test/widgets/bottom_navigation_bar_mod.dart';
+import 'package:theory_test/widgets/bottom_nav_bar_mod.dart';
 import 'package:theory_test/widgets/divide_arrow_button.dart';
 
 class ExtraPage extends StatelessWidget {
@@ -13,7 +13,7 @@ class ExtraPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
-        bottomNavigationBar: const BottomNavigationBarMod(),
+        bottomNavigationBar: const BottomNavBarMod(),
         appBar: const AppBarMod(
           title: 'Extra',
           iconData: Icons.dashboard_outlined,
@@ -34,10 +34,9 @@ class ExtraPage extends StatelessWidget {
                   onPressed: () {
                     // ExtraInnerPage.setRouteNamex(
                     //     Constants.extraInnerPageElements[index]['routeName']!);
-                    // print(ExtraInnerPage.routeName);
                     Navigator.pushNamed(
                       context,
-                      ExtraInnerPage.routeName,
+                      Constants.extraInnerPageElements[index]['routeName']!,
                       arguments: ExtraInnerPageArguments(
                         appBarTitle: Constants.extraInnerPageElements[index]
                             ['appBarTitle']!,
@@ -45,6 +44,7 @@ class ExtraPage extends StatelessWidget {
                             ['bodyText'],
                       ),
                     );
+                    print(Constants.extraInnerPageElements[index]['routeName']);
                   },
                 ),
               );

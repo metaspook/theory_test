@@ -7,11 +7,24 @@ import 'package:theory_test/pages/study_page.dart';
 class Routes {
   // This constructor prevents instantiation and extension.
   Routes._();
-  static const initialRoute = '/extra_page';
+  static final extraInnerPageRoutes = {
+    '/test_center': (_) => const ExtraInnerPage(),
+    '/about_theory': (_) => const ExtraInnerPage(),
+    '/highway_code': (_) => const ExtraInnerPage(),
+    '/useful_links': (_) => const ExtraInnerPage(),
+    '/dvsa_products': (_) => const ExtraInnerPage(),
+    '/use_this_app': (_) => const ExtraInnerPage(),
+    '/share_this_app': (_) => const ExtraInnerPage(),
+    '/tell_us': (_) => const ExtraInnerPage(),
+  };
+
+  static const initialRoute = '/';
   static final pageRoutes = {
-    '/': (_) => const StudyPage(),
-    '/home_page': (_) => const HomePage(),
-    '/extra_page': (_) => const ExtraPage(),
-    ExtraInnerPage.routeName: (_) => const ExtraInnerPage(),
+    '/': (_) => const HomePage(),
+    '/home': (_) => const HomePage(),
+    '/study': (_) => const StudyPage(),
+    '/extra': (_) => const ExtraPage(),
+    ...extraInnerPageRoutes,
+    // ExtraInnerPage.routeName: (_) => const ExtraInnerPage(),
   };
 }

@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:theory_test/controllers/bottom_nav_bar_controller.dart';
 import 'package:theory_test/utils/routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(providers: [
+    ChangeNotifierProvider(create: (_) => BottomNavBarController())
+  ], child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {

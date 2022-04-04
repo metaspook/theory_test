@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:theory_test/widgets/appbar_mod.dart';
-import 'package:theory_test/widgets/bottom_navigation_bar_mod.dart';
+import 'package:theory_test/widgets/bottom_nav_bar_mod.dart';
 
 class ExtraInnerPageArguments {
   ExtraInnerPageArguments({required this.appBarTitle, this.bodyText});
@@ -10,7 +10,7 @@ class ExtraInnerPageArguments {
 
 class ExtraInnerPage extends StatelessWidget {
   const ExtraInnerPage({Key? key}) : super(key: key);
-  static String routeName = '/extra_inner_page';
+  // static String routeName = '/extra_inner_page';
   // static void setRouteNamex(String name) => routeName = name;
 
   @override
@@ -21,7 +21,7 @@ class ExtraInnerPage extends StatelessWidget {
         ModalRoute.of(context)!.settings.arguments as ExtraInnerPageArguments;
 
     return Scaffold(
-      bottomNavigationBar: const BottomNavigationBarMod(),
+      bottomNavigationBar: const BottomNavBarMod(),
       appBar: AppBarMod(title: args.appBarTitle),
       body: args.bodyText == null
           ? null

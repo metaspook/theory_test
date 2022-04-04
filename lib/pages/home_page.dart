@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:theory_test/widgets/appbar_mod.dart';
-import 'package:theory_test/widgets/bottom_navigation_bar_mod.dart';
+import 'package:theory_test/widgets/bottom_nav_bar_mod.dart';
 import 'package:theory_test/widgets/progress_bar.dart';
 import 'package:theory_test/widgets/start_journey_card.dart';
 
@@ -12,8 +12,9 @@ class HomePage extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-        bottomNavigationBar: const BottomNavigationBarMod(),
+        bottomNavigationBar: const BottomNavBarMod(),
         appBar: const AppBarMod(
+          enableLeadingOnPressed: false,
           title: 'Theory test',
           iconData: Icons.dashboard_outlined,
         ),
