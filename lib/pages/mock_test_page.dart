@@ -147,7 +147,7 @@ class MockTestPage extends StatelessWidget {
                   color: colorScheme.primary,
                   onPressed: () {},
                   child: Text(
-                    'Read',
+                    'Start Now',
                     style: Theme.of(context).textTheme.titleMedium!.copyWith(
                         color: colorScheme.secondary,
                         fontWeight: FontWeight.bold),

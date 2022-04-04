@@ -5,14 +5,14 @@ class Routes {
   // This constructor prevents instantiation and extension.
   Routes._();
   static final extraInnerPageRoutes = {
-    '/test_center': (_) => const ExtraInnerPage(),
-    '/about_theory': (_) => const ExtraInnerPage(),
-    '/highway_code': (_) => const ExtraInnerPage(),
-    '/useful_links': (_) => const ExtraInnerPage(),
-    '/dvsa_products': (_) => const ExtraInnerPage(),
-    '/use_this_app': (_) => const ExtraInnerPage(),
-    '/share_this_app': (_) => const ExtraInnerPage(),
-    '/tell_us': (_) => const ExtraInnerPage(),
+    '/extra/test_center': (_) => const ExtraInnerPage(),
+    '/extra/about_theory': (_) => const ExtraInnerPage(),
+    '/extra/highway_code': (_) => const ExtraInnerPage(),
+    '/extra/useful_links': (_) => const ExtraInnerPage(),
+    '/extra/dvsa_products': (_) => const ExtraInnerPage(),
+    '/extra/use_this_app': (_) => const ExtraInnerPage(),
+    '/extra/share_this_app': (_) => const ExtraInnerPage(),
+    '/extra/tell_us': (_) => const ExtraInnerPage(),
   };
   static final homeChildPageRoutes = {
     '/study': (_) => const StudyPage(),
