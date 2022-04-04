@@ -14,6 +14,7 @@ class CircularProgressBar extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
+        // Outer circle.
         Container(
           // alignment: Alignment.center,
           width: width * 19.05,
@@ -32,6 +33,7 @@ class CircularProgressBar extends StatelessWidget {
             ],
           ),
         ),
+        // Inner circle.
         Container(
           width: width * 15.2,
           height: width * 15.2,
@@ -91,6 +93,7 @@ class LinearProgressBar extends StatelessWidget {
     return Stack(
       alignment: Alignment.center,
       children: [
+        // Outer line.
         Container(
           alignment: Alignment.center,
           height: height * 1.6,

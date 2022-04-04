@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:theory_test/utils/method.dart';
+import 'package:theory_test/utils/methods.dart';
 
-class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  const CustomAppBar({Key? key, required this.title, this.iconData})
+class AppBarMod extends StatelessWidget implements PreferredSizeWidget {
+  const AppBarMod({Key? key, required this.title, this.iconData})
       : super(key: key);
   // const CustomAppBar.secondary({Key? key, required this.title}) : super(key: key);
   final String title;
@@ -23,14 +23,14 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: iconData == null
           ? IconButton(
               icon: const Icon(Icons.arrow_back_ios_rounded),
-              onPressed: () => Method.goBack(context),
+              onPressed: () => Methods.goBack(context),
             )
           : IconButton(
               icon: Icon(
                 iconData,
                 color: colorScheme.primary,
               ),
-              onPressed: () => Method.goHome(context),
+              onPressed: () => Methods.goHome(context),
             ),
       actions: const [
         Icon(Icons.share_outlined),

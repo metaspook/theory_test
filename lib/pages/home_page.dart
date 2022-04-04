@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:theory_test/widgets/custom_appbar.dart';
-import 'package:theory_test/widgets/custom_bottom_navigation_bar.dart';
+import 'package:theory_test/widgets/appbar_mod.dart';
+import 'package:theory_test/widgets/bottom_navigation_bar_mod.dart';
 import 'package:theory_test/widgets/progress_bar.dart';
 import 'package:theory_test/widgets/start_journey_card.dart';
 
@@ -12,8 +12,8 @@ class HomePage extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
 
     return Scaffold(
-        bottomNavigationBar: CustomBottomNavigationBar(),
-        appBar: const CustomAppBar(
+        bottomNavigationBar: const BottomNavigationBarMod(),
+        appBar: const AppBarMod(
           title: 'Theory test',
           iconData: Icons.dashboard_outlined,
         ),
@@ -44,21 +44,33 @@ class HomePage extends StatelessWidget {
                           children: const [Text("Study"), Text("15%")],
                         ),
                         const SizedBox(height: 10),
-                        const LinearProgressBar(percent: 15),
+                        LinearProgressBar(
+                          colors: [colorScheme.primary],
+                          percent: 0.15,
+                          height: 12,
+                        ),
                         const SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: const [Text("Pactice"), Text("20%")],
+                          children: const [Text("Practice"), Text("20%")],
                         ),
                         const SizedBox(height: 10),
-                        const LinearProgressBar(percent: 20),
+                        LinearProgressBar(
+                          colors: [colorScheme.primary],
+                          percent: 0.20,
+                          height: 12,
+                        ),
                         const SizedBox(height: 10),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: const [Text("Mock test"), Text("12%")],
                         ),
                         const SizedBox(height: 10),
-                        const LinearProgressBar(percent: 12),
+                        LinearProgressBar(
+                          colors: [colorScheme.primary],
+                          percent: 0.12,
+                          height: 12,
+                        ),
                         const SizedBox(height: 10),
                       ],
                     ),

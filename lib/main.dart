@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:theory_test/pages/study_page.dart';
+import 'package:theory_test/utils/routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,10 +20,8 @@ class MyApp extends StatelessWidget {
         primary: Colors.blue,
         secondary: Theme.of(context).scaffoldBackgroundColor,
       )),
-      home: const StudyPage(),
-      // home: const ExtraPage(),
-      // home: const AboutTheory(),
-      // home: const HomePage(),
+      initialRoute: Routes.initialRoute,
+      routes: Routes.pageRoutes,
     );
   }
 }

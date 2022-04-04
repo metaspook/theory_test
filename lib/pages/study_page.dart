@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:theory_test/widgets/appbar_mod.dart';
+import 'package:theory_test/widgets/bottom_navigation_bar_mod.dart';
 import 'package:theory_test/widgets/center_title_button.dart';
-import 'package:theory_test/widgets/custom_appbar.dart';
-import 'package:theory_test/widgets/custom_bottom_navigation_bar.dart';
 import 'package:theory_test/widgets/progress_bar.dart'
     show CircularProgressBar, LinearProgressBar;
 
@@ -16,8 +16,8 @@ class StudyPage extends StatelessWidget {
     );
     final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
-      bottomNavigationBar: CustomBottomNavigationBar(),
-      appBar: const CustomAppBar(
+      bottomNavigationBar: const BottomNavigationBarMod(),
+      appBar: const AppBarMod(
         title: 'Study',
         iconData: Icons.dashboard_outlined,
       ),
