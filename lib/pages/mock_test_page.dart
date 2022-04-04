@@ -5,8 +5,8 @@ import 'package:theory_test/widgets/center_title_button.dart';
 import 'package:theory_test/widgets/progress_bar.dart'
     show CircularProgressBar, LinearProgressBar;
 
-class PracticePage extends StatelessWidget {
-  const PracticePage({Key? key}) : super(key: key);
+class MockTestPage extends StatelessWidget {
+  const MockTestPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class PracticePage extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: const BottomNavBarMod(),
       appBar: const AppBarMod(
-        title: 'Practice',
+        title: 'Mock Test',
         iconData: Icons.dashboard_outlined,
       ),
       body: ListView(
@@ -31,7 +31,7 @@ class PracticePage extends StatelessWidget {
           const SizedBox(height: 25),
           CircularProgressBar(
             colors: [colorScheme.primary, Colors.cyan],
-            percent: 0,
+            percent: .5,
             width: 12,
           ),
           const SizedBox(height: 25),
@@ -42,7 +42,7 @@ class PracticePage extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      '0%',
+                      '0',
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
@@ -50,7 +50,7 @@ class PracticePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'Answered',
+                      'Tests Taken',
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
@@ -67,7 +67,7 @@ class PracticePage extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      '0%',
+                      '-/50',
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
@@ -75,7 +75,32 @@ class PracticePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'Accuracy',
+                      'Last Score',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline6!
+                          .copyWith(color: Colors.grey.shade700),
+                    ),
+                  ],
+                ),
+                const VerticalDivider(
+                  indent: 3,
+                  endIndent: 12,
+                  thickness: 2,
+                  // color: Colors.black,
+                ),
+                Column(
+                  children: [
+                    Text(
+                      '-/50',
+                      style: Theme.of(context)
+                          .textTheme
+                          .headline6!
+                          .copyWith(color: colorScheme.primary),
+                    ),
+                    const SizedBox(height: 10),
+                    Text(
+                      'Average',
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
@@ -132,28 +157,14 @@ class PracticePage extends StatelessWidget {
             ),
           ),
           // const Spacer(),
-          const SizedBox(height: 35),
+          const SizedBox(height: 85),
           CenterTitleButton(
-            title: 'Practice Topics',
+            title: 'Start Mock Test',
             color: colorScheme.secondary,
             titleColor: colorScheme.primary,
             onPressed: () {},
           ),
-          const SizedBox(height: 10),
-          CenterTitleButton(
-            title: 'Quick Test',
-            color: colorScheme.secondary,
-            titleColor: colorScheme.primary,
-            onPressed: () {},
-          ),
-          const SizedBox(height: 10),
-          CenterTitleButton(
-            title: 'Practice Videos',
-            color: colorScheme.secondary,
-            titleColor: colorScheme.primary,
-            onPressed: () {},
-          ),
-          const SizedBox(height: 10),
+          const SizedBox(height: 5),
         ],
       ),
     );

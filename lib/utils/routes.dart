@@ -1,7 +1,4 @@
-import 'package:theory_test/pages/extra_inner_page.dart';
-import 'package:theory_test/pages/extra_page.dart';
-import 'package:theory_test/pages/home_page.dart';
-import 'package:theory_test/pages/study_page.dart';
+import 'package:theory_test/pages/pages.dart';
 
 /// All routes throughout the app (singleton).
 class Routes {
@@ -17,13 +14,19 @@ class Routes {
     '/share_this_app': (_) => const ExtraInnerPage(),
     '/tell_us': (_) => const ExtraInnerPage(),
   };
+  static final homeChildPageRoutes = {
+    '/study': (_) => const StudyPage(),
+    '/practice': (_) => const PracticePage(),
+    '/mock_test': (_) => const MockTestPage(),
+  };
 
   static const initialRoute = '/';
   static final pageRoutes = {
     '/': (_) => const HomePage(),
     '/home': (_) => const HomePage(),
-    '/study': (_) => const StudyPage(),
     '/extra': (_) => const ExtraPage(),
+    '/settings': (_) => const SettingsPage(),
+    ...homeChildPageRoutes,
     ...extraInnerPageRoutes,
     // ExtraInnerPage.routeName: (_) => const ExtraInnerPage(),
   };

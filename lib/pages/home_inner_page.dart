@@ -5,16 +5,24 @@ import 'package:theory_test/widgets/center_title_button.dart';
 import 'package:theory_test/widgets/progress_bar.dart'
     show CircularProgressBar, LinearProgressBar;
 
-class PracticePage extends StatelessWidget {
-  const PracticePage({Key? key}) : super(key: key);
+class HomeInnerPageArguments {
+  // final String appBarTitle;
+  // final String appBarTitle;
+  // final String appBarTitle;
+}
+
+class HomeInnerPage extends StatelessWidget {
+  const HomeInnerPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final args =
+        ModalRoute.of(context)!.settings.arguments as HomeInnerPageArguments;
     final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
       bottomNavigationBar: const BottomNavBarMod(),
       appBar: const AppBarMod(
-        title: 'Practice',
+        title: 'Study',
         iconData: Icons.dashboard_outlined,
       ),
       body: ListView(
@@ -42,7 +50,7 @@ class PracticePage extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      '0%',
+                      '0',
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
@@ -50,7 +58,7 @@ class PracticePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'Answered',
+                      'Topics Done',
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
@@ -67,7 +75,7 @@ class PracticePage extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      '0%',
+                      '14',
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
@@ -75,7 +83,7 @@ class PracticePage extends StatelessWidget {
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      'Accuracy',
+                      'Topics To Do',
                       style: Theme.of(context)
                           .textTheme
                           .headline6!
@@ -110,7 +118,7 @@ class PracticePage extends StatelessWidget {
               children: [
                 const SizedBox(height: 5),
                 Text(
-                  'Analyze your mock test performance',
+                  'Read The Official Highway Code',
                   textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.titleMedium!.copyWith(
                       color: Colors.grey.shade700, fontWeight: FontWeight.bold),
@@ -132,23 +140,21 @@ class PracticePage extends StatelessWidget {
             ),
           ),
           // const Spacer(),
-          const SizedBox(height: 35),
+          const SizedBox(height: 85),
           CenterTitleButton(
-            title: 'Practice Topics',
+            title: 'Start Study',
             color: colorScheme.secondary,
             titleColor: colorScheme.primary,
             onPressed: () {},
           ),
-          const SizedBox(height: 10),
           CenterTitleButton(
-            title: 'Quick Test',
+            title: 'Start Study',
             color: colorScheme.secondary,
             titleColor: colorScheme.primary,
             onPressed: () {},
           ),
-          const SizedBox(height: 10),
           CenterTitleButton(
-            title: 'Practice Videos',
+            title: 'Start Studdy',
             color: colorScheme.secondary,
             titleColor: colorScheme.primary,
             onPressed: () {},

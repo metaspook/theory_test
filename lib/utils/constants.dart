@@ -25,10 +25,31 @@ class Constants {
     },
     {
       "icon": Icons.settings_outlined,
-      "label": "Setting",
+      "label": "Settings",
       "routeName": '/settings',
     },
   ];
+
+  // static const homeInnerPageElements = <Map<String, String>>[
+  //   {
+  //     "appBarTitle": "Test Center",
+  //     "percent": Constants.loremText,
+  //     "outerButtonTitle": "Find a driving test centre",
+  //     "routeName": '/test_center',
+  //   },
+  //   {
+  //     "appBarTitle": "About Theory",
+  //     "bodyText": Constants.loremText,
+  //     "outerButtonTitle": "More about the theory test",
+  //     "routeName": '/about_theory',
+  //   },
+  //   {
+  //     "appBarTitle": "Highway Code",
+  //     "bodyText": Constants.loremText,
+  //     "outerButtonTitle": "The Official Highway Code",
+  //     "routeName": '/highway_code',
+  //   },
+  // ];
 
   static const extraInnerPageElements = <Map<String, String>>[
     {

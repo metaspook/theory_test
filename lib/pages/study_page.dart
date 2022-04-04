@@ -10,10 +10,6 @@ class StudyPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const ff = ElevatedButton(
-      onPressed: null,
-      child: null,
-    );
     final colorScheme = Theme.of(context).colorScheme;
     return Scaffold(
       bottomNavigationBar: const BottomNavBarMod(),
@@ -143,6 +139,7 @@ class StudyPage extends StatelessWidget {
             titleColor: colorScheme.primary,
             onPressed: () {},
           ),
+          const SizedBox(height: 5),
         ],
       ),
     );

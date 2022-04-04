@@ -32,7 +32,7 @@ class _BottomNavBarModState extends State<BottomNavBarMod> {
         onTap: (index) {
           // setState(() {
           _currentIndex = index;
-          Navigator.pushNamed(
+          Navigator.pushReplacementNamed(
               context, Constants.bottomNavBarElements[index]['routeName']);
           print('Im $index');
           // });

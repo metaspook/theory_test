@@ -53,6 +53,7 @@ class CircularProgressBar extends StatelessWidget {
           ),
         ),
         CircularPercentIndicator(
+          // reverse: true,
           linearGradient: colors != null && colors!.length > 1
               ? LinearGradient(
                   begin: Alignment.topCenter,
