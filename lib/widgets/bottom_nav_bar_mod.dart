@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:theory_test/utils/constants.dart';
+import 'package:provider/provider.dart';
+import 'package:theory_test/controllers/bottom_nav_bar_controller.dart';
 
 class BottomNavBarMod extends StatefulWidget {
   const BottomNavBarMod({Key? key}) : super(key: key);
@@ -9,11 +10,9 @@ class BottomNavBarMod extends StatefulWidget {
 }
 
 class _BottomNavBarModState extends State<BottomNavBarMod> {
-  int _currentIndex = 0;
-
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
+    final provider = context.watch<BottomNavBarController>();
     return Container(
       decoration: BoxDecoration(
         boxShadow: [
@@ -28,31 +27,12 @@ class _BottomNavBarModState extends State<BottomNavBarMod> {
         selectedItemColor: ThemeData().unselectedWidgetColor,
         selectedFontSize: 12,
         type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
-        onTap: (index) {
-          // setState(() {
-          _currentIndex = index;
-          Navigator.pushReplacementNamed(
-              context, Constants.bottomNavBarElements[index]['routeName']);
-          print('Im $index');
-          // });
-        },
+        currentIndex: provider.currentIndex,
+        onTap: (index) => context
+            .read<BottomNavBarController>()
+            .navigateIndex(context, index),
         elevation: 10,
-        items: [
-          for (var e in Constants.bottomNavBarElements)
-            BottomNavigationBarItem(icon: Icon(e['icon']), label: e['label']),
-
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.menu_book_outlined), label: "Study"),
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.check_circle_outline_rounded), label: "Pactice"),
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.alarm_on_rounded), label: "Mock Test"),
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.more_outlined), label: "Extra"),
-          // BottomNavigationBarItem(
-          //     icon: Icon(Icons.settings_outlined), label: "Setting"),
-        ],
+        items: provider.items,
       ),
     );
   }

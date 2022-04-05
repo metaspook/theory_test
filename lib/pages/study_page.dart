@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:theory_test/widgets/appbar_mod.dart';
 import 'package:theory_test/widgets/bottom_nav_bar_mod.dart';
 import 'package:theory_test/widgets/center_title_button.dart';
-import 'package:theory_test/widgets/progress_bar.dart'
-    show CircularProgressBar, LinearProgressBar;
+import 'package:theory_test/widgets/progress_bar.dart' show CircularProgressBar;
 
 class StudyPage extends StatelessWidget {
   const StudyPage({Key? key}) : super(key: key);
+  static const routeName = '/study';
 
   @override
   Widget build(BuildContext context) {

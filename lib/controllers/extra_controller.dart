@@ -1,29 +1,47 @@
-import 'package:flutter/cupertino.dart';
-import 'package:theory_test/pages/extra_inner_page.dart'
-    show ExtraInnerPageArguments;
-import 'package:theory_test/utils/constants.dart';
+import 'package:flutter/material.dart';
+import 'package:theory_test/pages/extra_inner_pages/extra_inner_pages.dart';
 
-class ExtraController extends ChangeNotifier {
-  int _currentIndex = 0;
+class ExtraController {
+  final _buttonElements = const <Map<String, String>>[
+    {
+      "title": "Find a driving test centre",
+      "routeName": TestCenterPage.routeName,
+    },
+    {
+      "title": "More about the theory test",
+      "routeName": AboutTheoryPage.routeName,
+    },
+    {
+      "title": "The Official Highway Code",
+      "routeName": HighwayCodePage.routeName,
+    },
+    {
+      "title": "Useful links",
+      "routeName": UsefulLinksPage.routeName,
+    },
+    {
+      "title": "More DVSA products",
+      "routeName": DvsaProductsPage.routeName,
+    },
+    {
+      "title": "How to use this app",
+      "routeName": UseThisAppPage.routeName,
+    },
+    {
+      "title": "Share this app",
+      "routeName": ShareThisAppPage.routeName,
+    },
+    {
+      "title": "Tell us what you think",
+      "routeName": TellUsPage.routeName,
+    },
+  ];
 
-// Constants.extraInnerPageElements[index]
-//                       ['outerButtonTitle'],
+  int get buttonsLength => _buttonElements.length;
+  String title(int index) => _buttonElements[index]["title"]!;
 
-  void onPressed(BuildContext context, int index) {
-    Navigator.pushNamed(
-      context,
-      Constants.extraInnerPageElements[index]['routeName']!,
-      arguments: ExtraInnerPageArguments(
-        appBarTitle: Constants.extraInnerPageElements[index]['appBarTitle']!,
-        bodyText: Constants.extraInnerPageElements[index]['bodyText'],
-      ),
-    );
-    print(Constants.extraInnerPageElements[index]['routeName']);
-  }
-
-  int get currentIndex => _currentIndex;
-  void changeIndex(int index) {
-    _currentIndex = index;
-    notifyListeners();
+  void navigateIndex(BuildContext context, int index) {
+    Navigator.pushNamed(context, _buttonElements[index]['routeName']!);
+    // print(_buttonElements[index]['routeName']);
   }
 }

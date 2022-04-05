@@ -10,11 +10,12 @@ import 'package:theory_test/widgets/toggle_button_bar.dart';
 
 class SettingsPage extends StatelessWidget {
   const SettingsPage({Key? key}) : super(key: key);
+  static const routeName = '/settings';
 
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
-    print('object');
+    // print('object');
     return Scaffold(
       bottomNavigationBar: const BottomNavBarMod(),
       appBar: const AppBarMod(

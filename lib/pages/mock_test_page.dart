@@ -7,6 +7,7 @@ import 'package:theory_test/widgets/progress_bar.dart'
 
 class MockTestPage extends StatelessWidget {
   const MockTestPage({Key? key}) : super(key: key);
+  static const routeName = '/mock_test';
 
   @override
   Widget build(BuildContext context) {

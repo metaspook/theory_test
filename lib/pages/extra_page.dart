@@ -1,79 +1,40 @@
 import 'package:flutter/material.dart';
-import 'package:theory_test/pages/extra_inner_page.dart';
-import 'package:theory_test/utils/constants.dart';
+import 'package:theory_test/controllers/extra_controller.dart';
 import 'package:theory_test/widgets/appbar_mod.dart';
 import 'package:theory_test/widgets/bottom_nav_bar_mod.dart';
 import 'package:theory_test/widgets/divide_arrow_button.dart';
 
 class ExtraPage extends StatelessWidget {
   const ExtraPage({Key? key}) : super(key: key);
+  static const routeName = '/extra';
 
-//
   @override
   Widget build(BuildContext context) {
     final colorScheme = Theme.of(context).colorScheme;
+    final controller = ExtraController();
     return Scaffold(
         bottomNavigationBar: const BottomNavBarMod(),
         appBar: const AppBarMod(
-          title: 'Extra',
+          title: "Extra",
           iconData: Icons.dashboard_outlined,
         ),
         body: Center(
           child: ListView.builder(
-            itemCount: Constants.extraInnerPageElements.length,
-            itemBuilder: (BuildContext context, int index) {
+            itemCount: controller.buttonsLength,
+            itemBuilder: (context, index) {
               return Padding(
                 padding:
                     const EdgeInsets.symmetric(horizontal: 18, vertical: 6),
                 child: DivideArrowButton(
-                  title: Constants.extraInnerPageElements[index]
-                      ['outerButtonTitle'],
+                  title: controller.title(index),
                   color: colorScheme.secondary,
                   titleColor: Colors.grey.shade700,
                   arrowColor: colorScheme.primary,
-                  onPressed: () {
-                    // ExtraInnerPage.setRouteNamex(
-                    //     Constants.extraInnerPageElements[index]['routeName']!);
-                    Navigator.pushNamed(
-                      context,
-                      Constants.extraInnerPageElements[index]['routeName']!,
-                      arguments: ExtraInnerPageArguments(
-                        appBarTitle: Constants.extraInnerPageElements[index]
-                            ['appBarTitle']!,
-                        bodyText: Constants.extraInnerPageElements[index]
-                            ['bodyText'],
-                      ),
-                    );
-                    print(Constants.extraInnerPageElements[index]['routeName']);
-                  },
+                  onPressed: () => controller.navigateIndex(context, index),
                 ),
               );
             },
           ),
-
-          // ListView.builder(
-          //   // mainAxisAlignment: MainAxisAlignment.center,
-          //   // crossAxisAlignment: CrossAxisAlignment.stretch,
-          //   children: [
-          //     for (final e in Constants.extraPageElements)
-          //       Padding(
-          //         padding:
-          //             const EdgeInsets.symmetric(horizontal: 18, vertical: 6),
-          //         child: DivideArrowButton(
-          //           title: e['title'],
-          //           color: colorScheme.secondary,
-          //           titleColor: Colors.grey.shade700,
-          //           arrowColor: colorScheme.primary,
-          //           onPressed: () =>
-          //               Navigator.pushNamed(context, ExtraInnerPage.routeName,
-          //                   arguments: ExtraInnerPageArguments(
-          //                     appBarTitle: 'appBarTitle',
-          //                     bodyText: Constants.loremText,
-          //                   )),
-          //         ),
-          //       ),
-          //   ],
-          // ),
         ));
   }
 }

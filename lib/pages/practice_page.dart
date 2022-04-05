@@ -7,6 +7,7 @@ import 'package:theory_test/widgets/progress_bar.dart'
 
 class PracticePage extends StatelessWidget {
   const PracticePage({Key? key}) : super(key: key);
+  static const routeName = '/practice';
 
   @override
   Widget build(BuildContext context) {
