@@ -1,3 +1,4 @@
+export 'about_page.dart';
 export 'extra_inner_page.dart';
 export 'extra_page.dart';
 export 'home_page.dart';

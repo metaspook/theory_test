@@ -26,6 +26,7 @@ class Routes {
     '/home': (_) => const HomePage(),
     '/extra': (_) => const ExtraPage(),
     '/settings': (_) => const SettingsPage(),
+    '/settings/about_page.dart': (_) => const AboutPage(),
     ...homeChildPageRoutes,
     ...extraInnerPageRoutes,
     // ExtraInnerPage.routeName: (_) => const ExtraInnerPage(),
