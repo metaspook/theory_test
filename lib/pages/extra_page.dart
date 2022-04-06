@@ -26,11 +26,13 @@ class ExtraPage extends StatelessWidget {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 18, vertical: 6),
                 child: DivideArrowButton(
-                  title: controller.title(index),
-                  color: colorScheme.secondary,
-                  titleColor: Colors.grey.shade700,
                   arrowColor: colorScheme.primary,
-                  onPressed: () => controller.navigateIndex(context, index),
+                  color: colorScheme.secondary,
+                  title: Text(
+                    controller.title(index),
+                    style: TextStyle(color: Colors.grey.shade700),
+                  ),
+                  onTap: () => controller.navigateIndex(context, index),
                 ),
               );
             },

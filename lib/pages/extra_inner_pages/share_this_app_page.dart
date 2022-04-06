@@ -8,7 +8,7 @@ class ShareThisAppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const InnerPageWidget(
+    return const InnerPageWidget.text(
       appBarTitle: 'Share This App',
       bodyText: Constants.loremText,
     );

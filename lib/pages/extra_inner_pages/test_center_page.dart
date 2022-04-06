@@ -8,7 +8,7 @@ class TestCenterPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const InnerPageWidget(
+    return const InnerPageWidget.text(
       appBarTitle: 'Test Center',
       bodyText: Constants.loremText,
     );

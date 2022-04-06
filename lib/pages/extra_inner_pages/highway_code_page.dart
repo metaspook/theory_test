@@ -8,7 +8,7 @@ class HighwayCodePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const InnerPageWidget(
+    return const InnerPageWidget.text(
       appBarTitle: 'Highway Code',
       bodyText: Constants.loremText,
     );

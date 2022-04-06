@@ -12,12 +12,14 @@ class ModalBottomSheetMod extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     final provider = context.watch<SettingsController>();
     return DivideArrowButton(
-      title: 'Reset Scores',
-      titleBold: true,
-      color: colorScheme.secondary,
-      titleColor: Colors.grey.shade700,
       arrowColor: colorScheme.primary,
-      onPressed: () {
+      color: colorScheme.secondary,
+      title: Text(
+        'Reset Scores',
+        style:
+            TextStyle(color: Colors.grey.shade700, fontWeight: FontWeight.bold),
+      ),
+      onTap: () {
         showModalBottomSheet(
             context: context,
             shape: const RoundedRectangleBorder(

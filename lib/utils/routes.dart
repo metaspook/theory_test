@@ -1,5 +1,10 @@
 import 'package:theory_test/pages/extra_inner_pages/extra_inner_pages.dart';
+import 'package:theory_test/pages/observation_page.dart';
+import 'package:theory_test/pages/observation_page2.dart';
 import 'package:theory_test/pages/pages.dart';
+import 'package:theory_test/pages/question_page.dart';
+import 'package:theory_test/pages/select_topic_page.dart';
+import 'package:theory_test/pages/select_topic_page2.dart';
 
 /// All routes throughout the app (singleton).
 class Routes {
@@ -17,13 +22,16 @@ class Routes {
   };
   static final homeChildPageRoutes = {
     '/study': (_) => const StudyPage(),
+    '/study/observation': (_) => const ObservationPage(),
+    '/study/select_topic': (_) => const SelectTopic(),
+    '/study/observation2': (_) => const ObservationPage2(),
     '/practice': (_) => const PracticePage(),
+    '/practice/question_page': (_) => const QuestionPage(),
+    '/practice/select_topic2': (_) => const SelectTopic2(),
     '/mock_test': (_) => const MockTestPage(),
   };
-
-  static const initialRoute = '/';
   static final pageRoutes = {
-    '/': (_) => const HomePage(),
+    '/': (_) => const SelectTopic2(),
     '/home': (_) => const HomePage(),
     '/extra': (_) => const ExtraPage(),
     '/settings': (_) => const SettingsPage(),
@@ -32,4 +40,5 @@ class Routes {
     ...extraInnerPageRoutes,
     // ExtraInnerPage.routeName: (_) => const ExtraInnerPage(),
   };
+  static const initialRoute = '/';
 }

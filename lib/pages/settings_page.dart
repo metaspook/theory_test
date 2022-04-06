@@ -52,12 +52,14 @@ class SettingsPage extends StatelessWidget {
           const ModalBottomSheetMod(),
           const SizedBox(height: 10),
           DivideArrowButton(
-            title: 'About',
-            titleBold: true,
-            color: colorScheme.secondary,
-            titleColor: Colors.grey.shade700,
             arrowColor: colorScheme.primary,
-            onPressed: () =>
+            color: colorScheme.secondary,
+            title: Text(
+              'About',
+              style: TextStyle(
+                  color: Colors.grey.shade700, fontWeight: FontWeight.bold),
+            ),
+            onTap: () =>
                 Navigator.pushNamed(context, '/settings/about_page.dart'),
           ),
           const SizedBox(height: 10),

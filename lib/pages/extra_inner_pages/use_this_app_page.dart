@@ -8,7 +8,7 @@ class UseThisAppPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const InnerPageWidget(
+    return const InnerPageWidget.text(
       appBarTitle: 'Use This App',
       bodyText: Constants.loremText,
     );

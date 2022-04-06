@@ -8,7 +8,7 @@ class UsefulLinksPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const InnerPageWidget(
+    return const InnerPageWidget.text(
       appBarTitle: 'Useful Links',
       bodyText: Constants.loremText,
     );

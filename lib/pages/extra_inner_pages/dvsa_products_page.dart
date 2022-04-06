@@ -8,7 +8,7 @@ class DvsaProductsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const InnerPageWidget(
+    return const InnerPageWidget.text(
       appBarTitle: 'DVSA Products',
       bodyText: Constants.loremText,
     );
