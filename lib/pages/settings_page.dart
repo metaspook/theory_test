@@ -4,6 +4,7 @@ import 'package:theory_test/controllers/settings_controller.dart';
 import 'package:theory_test/widgets/appbar_mod.dart';
 import 'package:theory_test/widgets/bottom_nav_bar_mod.dart';
 import 'package:theory_test/widgets/divide_arrow_button.dart';
+import 'package:theory_test/widgets/modal_bottom_sheet_mod.dart';
 import 'package:theory_test/widgets/switch_list_tile_mod.dart';
 import 'package:theory_test/widgets/test_date_bar.dart';
 import 'package:theory_test/widgets/toggle_button_bar.dart';
@@ -48,14 +49,7 @@ class SettingsPage extends StatelessWidget {
           const SizedBox(height: 30),
           const SwitchListTiles(),
           const SizedBox(height: 35),
-          DivideArrowButton(
-            title: 'Reset Scores',
-            titleBold: true,
-            color: colorScheme.secondary,
-            titleColor: Colors.grey.shade700,
-            arrowColor: colorScheme.primary,
-            onPressed: () {},
-          ),
+          const ModalBottomSheetMod(),
           const SizedBox(height: 10),
           DivideArrowButton(
             title: 'About',
