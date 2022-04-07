@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:theory_test/widgets/divide_arrow_button.dart';
 import 'package:theory_test/widgets/inner_page_widget.dart';
 
-class SelectTopic extends StatelessWidget {
-  const SelectTopic({Key? key}) : super(key: key);
+class SelectTopicPage extends StatelessWidget {
+  const SelectTopicPage({Key? key}) : super(key: key);
   static const routeName = '/study/select_topic';
 
   @override

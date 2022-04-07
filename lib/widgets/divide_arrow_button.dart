@@ -45,8 +45,9 @@ class DivideArrowButton extends StatelessWidget {
           children: [
             if (trailing != null) trailing!,
             const SizedBox(width: 5),
-            const VerticalDivider(
-              thickness: 2,
+            VerticalDivider(
+              color: Colors.grey.withOpacity(0.25),
+              thickness: 1.5,
               indent: 10,
               endIndent: 10,
             ),

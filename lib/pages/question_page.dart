@@ -3,7 +3,7 @@ import 'package:theory_test/widgets/inner_page_widget.dart';
 
 class QuestionPage extends StatelessWidget {
   const QuestionPage({Key? key}) : super(key: key);
-  static const routeName = '/practice/question_page';
+  static const routeName = '/practice/question';
 
   @override
   Widget build(BuildContext context) {

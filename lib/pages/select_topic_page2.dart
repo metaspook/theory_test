@@ -3,8 +3,8 @@ import 'package:theory_test/widgets/center_title_button.dart';
 import 'package:theory_test/widgets/divide_arrow_button.dart';
 import 'package:theory_test/widgets/inner_page_widget.dart';
 
-class SelectTopic2 extends StatelessWidget {
-  const SelectTopic2({Key? key}) : super(key: key);
+class SelectTopicPage2 extends StatelessWidget {
+  const SelectTopicPage2({Key? key}) : super(key: key);
   static const routeName = '/practice/select_topic2';
 
   @override
